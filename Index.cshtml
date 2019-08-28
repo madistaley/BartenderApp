@@ -1,0 +1,35 @@
+@model Bartender_cs.Models.Drink
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width" />
+	<title>GetDrink</title>
+<head>
+<body>
+	<div>
+		@{
+			List<Bartender_cs.Models.Drink> ListOfDrinks = (List<Bartender_cs.Models.Drink>) ViewData["Drink"];
+
+		}
+		
+		<table>
+			<tr>
+				<td></td>
+				<td>Drink Menu</td>
+			</tr>
+
+			@foreach (Bartender_cs.Models.Drink drink in ListOfDrinks)
+			{
+			<tr>
+				<td>@drink.DrinkName</td>
+				<td>@drink.DrinkIngredients</td>
+				<td>@drink.DrinkPrice</td>
+			</tr>
+			}
+
+		</table>
+	</div>
+</body>
+</html>
